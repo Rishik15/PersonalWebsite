@@ -111,6 +111,8 @@ export const ProjectDetail = () => {
     transition: {
       type: "spring",
       mass: 0.5,
+      stiffness: 100,
+      damping: 20,
       duration: 1,
       delay: 0.5,
     },

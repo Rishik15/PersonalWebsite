@@ -12,9 +12,8 @@ import { ContactMe } from "../components/ContactMe.jsx";
 const ScrollFadeIn = ({ children, delay = 0 }) => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 60 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ root: document.getElementById("top"), once: true, amount: 0.05 }}
+      initial={{ opacity: 0, y: 56 }}
+      animate={{ opacity: 1, y: 0 }} 
       transition={{
         type: "spring",
         stiffness: 120,

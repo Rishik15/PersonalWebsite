@@ -95,7 +95,7 @@ export const Projects = forwardRef((props, ref) => {
           onDragStart={() => setIsDragging(true)}
           onDragEnd={() => setIsDragging(false)}
           dragConstraints={dragBounds}
-          dragElastic={2}
+          dragElastic={1}
           whileTap={{ cursor: "grabbing" }}
           transition={{ type: "spring", bounce: 0.5, mass: 0.1, stiffness: 80, damping: 15 }}
         >
