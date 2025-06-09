@@ -1,0 +1,218 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+
+@import "tailwindcss";
+
+.no-scrollbar::-webkit-scrollbar{
+  display:none;
+}
+
+.no-scrollbar{
+  -ms-overflow-style: none;
+}
+
+@theme {
+  --color-background: hsl(var(--background));
+  --color-cursor: hsl(var(--cursor));
+  --color-foreground: hsl(var(--foreground));
+  --color-border: hsl(var(--border));
+  --color-card: hsl(var(--card));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+
+  --hero-heading: hsl(var(--hero-heading));
+  --hero-subtext: hsl(var(--hero-subtext));
+
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-fade-in: fade-in 0.7s ease-out forwards;
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes flip-card {
+    from {
+      transform: rotateY(0deg);
+    }
+    to {
+      transform: rotateY(180deg);
+    }
+  }
+}
+
+@layer base {
+  :root {
+    --background: 222 100% 98%;        
+    --foreground: 0 0% 12%;           
+    --card: 43 100% 90%;               
+    --primary: 291 86% 83%;
+    --primary-foreground: 210 40% 98%;
+    --border: 214 32% 91%;
+    --hero-heading: 0 0% 0%;
+    --hero-subtext: 0 0% 12%;
+    --cursor: 0 0% 7%;
+  }
+
+  .dark {
+    --background: 0 0% 7%;              
+    --foreground: 0 0% 85%;           
+    --card: 43 100% 90%;                
+    --primary: 291 86% 83%;
+    --primary-foreground: 213 31% 91%;
+    --border: 217 33% 20%;
+    --hero-heading: 0 0% 96%;
+    --hero-subtext: 0 0% 69%;
+    --cursor: 222 100% 98%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+    font-family: 'Kanit', sans-serif;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    cursor: none;
+  }
+}
+
+.fine-pointer\:block {
+  display: none;
+}
+
+@media (pointer: fine) {
+  .fine-pointer\:block {
+    display: block !important;
+  }
+}
+
+.coarse-pointer\:block {
+  display: none;
+}
+
+@media (pointer: coarse) {
+  .coarse-pointer\:block {
+    display: block !important;
+  }
+}
+
+
+/* 5. Utility classes */
+@utility container {
+  margin-inline: auto;
+
+  @media (width >= 640px) {
+    max-width: 640px;
+  }
+  @media (width >= 768px) {
+    max-width: 768px;
+  }
+  @media (width >= 1024px) {
+    max-width: 1024px;
+  }
+  @media (width >= 1280px) {
+    max-width: 1280px;
+  }
+  @media (width >= 1400px) {
+    max-width: 1400px;
+  }
+}
+
+@utility card-hover {
+  @apply transition-transform duration-300 hover:scale-[1.02];
+}
+
+@layer utilities {
+
+  #top {
+    overflow-anchor: none;
+  }
+
+  @media (max-width: 369px) {
+    .min-h-typewriter {
+      min-height: 96px;
+    }
+  }
+
+  .text-hero-heading {
+    color: hsl(var(--hero-heading));
+  }
+
+  .text-hero-subtext {
+    color: hsl(var(--hero-subtext));
+  }
+
+  .btn-primary {
+    @apply px-5 py-3 bg-[#1D1D1D] text-primary font-semibold rounded-[15px] transition-transform hover:scale-[1.05] active:scale-[1.05];
+  }
+
+  .fade-in {
+    animation: fade-in 0.7s ease-out forwards;
+  }
+
+  .float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .project-hover {
+    @apply transition-all duration-300 hover:rounded-none hover:scale-100;
+  }
+
+  .font-kanit {
+    font-family: 'Kanit', sans-serif;
+  }
+
+  .font-space-grotesk {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+
+  .perspective {
+    perspective: 1000px;
+  }
+
+  .transform-style-preserve-3d {
+    transform-style: preserve-3d;
+  }
+
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
+
+  .shadow-card-light {
+    box-shadow:
+      inset 0 -4px 8px rgba(0, 0, 0, 0.2),
+      0 4px 8px rgba(130, 45, 45, 0.3);
+  }
+
+  .shadow-card-dark {
+    box-shadow:
+      inset 0 -2px 9px rgba(0, 0, 0, 0.8),
+      0 4px 8px rgba(63, 155, 143, 0.2);
+  }
+}
