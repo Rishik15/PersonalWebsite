@@ -37,7 +37,7 @@ const Card = ({ front, back, flipped, onFlip }) => {
           className={cn(
             "absolute w-full h-full px-[32px] backface-hidden",
             "bg-[#eed9f2] rounded-[50px] md:rounded-[70px] flex items-center justify-center text-center",
-            "text-[16px] md:text-[24px] font-space-grotesk text-black font-semibold",
+            "text-[16px] md:text-[20px] font-space-grotesk text-black font-semibold",
             "shadow-card-light shadow-card-dark", 
             isDarkMode ? "shadow-card-dark" : "shadow-card-light"
           )}
@@ -126,23 +126,27 @@ const Carousel = ({ children }) => {
 
 export const Skills = () => {
   const skills = [
-    {
-      front: "Programming Languages",
-      back: "Python, Java, C, SQL, JavaScript",
-    },
-    {
-      front: "Machine Learning & Data Science",
-      back: "Pandas, NumPy, Scikit-learn, TensorFlow, Matplotlib",
-    },
-    {
-      front: "Web Development",
-      back: "React.js, HTML, CSS, Streamlit, Flask, REST APIs",
-    },
-    {
-      front: "Tools & Platforms",
-      back: "Git, Firebase, Linux, Heroku, Docker",
-    },
-  ];
+  {
+    front: "Programming Languages",
+    back: "Python, Java, C, SQL, JavaScript",
+  },
+  {
+    front: "Machine Learning & Data Science",
+    back: "Pandas, NumPy, Seaborn, Scikit-learn, TensorFlow, Pytorch, Tableau",
+  },
+  {
+    front: "Web Development",
+    back: "React.js, HTML, CSS, Streamlit, Flask, REST APIs",
+  },
+  {
+    front: "Tools & Platforms",
+    back: "Git, GitHub, MySQL, Firebase, Linux, Docker, Visual Studio, Anaconda, Microsoft Azure, MS Excel",
+  },
+  {
+    front: "Certificates",
+    back: "Data Science Fundamentals (NASBA), Microsoft Certified: Azure Data Scientist Associate",
+  },
+];
 
   return (
     <div id="skills" className="w-full flex flex-col items-center space-y-[24px] md:space-y-[48px]">

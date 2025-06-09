@@ -31,7 +31,7 @@ export const HeroSection = () => {
 
       <div className="mt-[16px] md:mt-[24px] flex flex-wrap gap-[12px]">
         <button
-          onClick={() => window.open("public/RishikReddyYesgari_Resume.pdf", "_blank", "noopener,noreferrer")}
+          onClick={() => window.open("/RishikReddyYesgari_Resume.pdf", "_blank", "noopener,noreferrer")}
           className="btn-primary text-[14px] md:text-[16px] cursor-pointer"
         >
           Resume

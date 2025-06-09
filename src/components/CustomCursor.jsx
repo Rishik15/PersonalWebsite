@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { useLocation } from "react-router-dom";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 
 const NUM_CIRCLES = 40;
@@ -6,11 +7,13 @@ const ORBIT_RADIUS = 5;
 const IDLE_TIMEOUT = 300;
 
 export const CustomCursor = () => {
+  const location = useLocation();
+  const isProjectDetailPage = location.pathname.startsWith("/project/");
   const centerX = useMotionValue(0);
   const centerY = useMotionValue(0);
 
-  const springX = useSpring(centerX, { stiffness: 200, damping: 40, mass: 5 });
-  const springY = useSpring(centerY, { stiffness: 200, damping: 40, mass: 5 });
+  const springX = useSpring(centerX, { stiffness: 200, damping: 40, mass: 2 });
+  const springY = useSpring(centerY, { stiffness: 200, damping: 40, mass: 2 });
 
   const angles = useRef(
     Array.from({ length: NUM_CIRCLES }, () => Math.random() * Math.PI * 2)
@@ -87,7 +90,7 @@ export const CustomCursor = () => {
         style={{
           x: centerX,
           y: centerY,
-          backgroundColor: "hsl(var(--cursor))",
+          backgroundColor: isProjectDetailPage ? "hsl(0, 0%, 7%)" : "hsl(var(--cursor))",
           opacity: visible ? 1 : 0,
           transition: "opacity 0.3s ease",
           translateX: '-50%',
@@ -138,7 +141,7 @@ export const CustomCursor = () => {
             style={{
               x: springCircleX,
               y: springCircleY,
-              backgroundColor: "hsl(var(--cursor))",
+              backgroundColor: isProjectDetailPage ? "hsl(0, 0%, 7%)" : "hsl(var(--cursor))",
               opacity: visible ? 1 : 0,
               transition: "opacity 0.3s ease", 
             }}

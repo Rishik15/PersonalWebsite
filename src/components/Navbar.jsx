@@ -6,10 +6,10 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navItems = [
-  { name: "Skills", href: "#skills" },
-  { name: "Projects", href: "#projects" },
-  { name: "Work", href: "#work" },
-  { name: "Contact Me", href: "#contact" },
+    { name: "Work", href: "#work" },
+    { name: "Skills", href: "#skills" },
+    { name: "Projects", href: "#projects" },
+    { name: "Contact Me", href: "#contact" },
 ];
 
 export const Navbar = () => {

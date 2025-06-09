@@ -19,7 +19,7 @@ const projects = [
     title: "ForkIt",
     imageUrl: forkitImg,
     iconUrl: forkitIcon,
-    techStack: ["React", "Node.js", "MongoDB"],
+    techStack: ["Python", "Flask", "Scikit-learn", "Pandas", "TF-IDF", "Cosine Similarity"],
     githubLink: "https://github.com/Rishik15",
     description: [ `Fork It is a group restaurant recommendation app designed to solve a common problem: deciding where to eat with friends. Whether it's conflicting preferences, dietary restrictions, or just indecision, Fork It helps simplify the choice. Focused on the Trenton area, the app takes multiple users' inputs and returns a list of restaurants that best match the group’s combined preferences.`,
                    `For this project, I developed the entire backend recommendation system. I implemented two separate models — a TF-IDF-based model to capture subtle textual preferences and a categorical similarity model to match structured features like cuisine type and pricing. These models were then combined to compute overall scores for each restaurant, tailored to the group's aggregated preferences.`
@@ -31,7 +31,7 @@ const projects = [
     title: "Quick, Draw!",
     imageUrl: quickdrawImg,
     iconUrl: quickdrawIcon,
-    techStack: ["React", "Node.js", "MongoDB"],
+    techStack: ["\Python", "Flask", "Numpy", "Tensorflow", "LSTM(RNN)"],
     githubLink: "https://github.com/Rishik15",
     description: [ `While learning more about machine learning, I became particularly curious about how sequence-based models like LSTMs work in practice. That curiosity led me to Google’s Quick, Draw! game and its dataset. So I wanted to try making something similar`,
                    `I took this opportunity to build a full-stack doodle classification system where the backend LSTM model was trained on 20 object classes using real-world stroke data, reaching 97% accuracy. The system transforms raw JSON strokes into sequence data, then feeds them to the LSTM. I designed Flask APIs to handle real-time sketch input and return live predictions, keeping latency low for instant user feedback.`,
@@ -43,7 +43,7 @@ const projects = [
     title: "Tunes2Notes",
     imageUrl: tunes2notesImg,
     iconUrl: tunes2notesIcon,
-    techStack: ["React", "Node.js", "MongoDB"],
+    techStack: ["Python", "Librosa", "Magenta", "Music21", "Streamlit", "Pydub"],
     githubLink: "https://github.com/Rishik15",
     description:[ `Tunes2Notes was born from my curiosity about how audio could be converted into readable sheet music using machine learning. I started with the idea of simplifying music transcription — especially when dealing with multi-instrument audio.`,
                   `The project uses Spleeter to isolate piano tracks from full audio recordings, and then applies Google’s Onsets and Frames model to transcribe the piano into note sequences. These sequences are converted into sheet music using the music21 library, creating a full pipeline from audio input to printable musical notation.`,
@@ -55,7 +55,7 @@ const projects = [
     title: "ThreadInsight",
     imageUrl: threadinsightImg,
     iconUrl: threadinsightIcon,
-    techStack: ["React", "Node.js", "MongoDB"],
+    techStack: ["Python, Streamlit, Pandas, Matplotlib, Seaborn, PRAW"],
     githubLink: "https://github.com/Rishik15",
     description: [ `ThreadInsight was developed to simplify the process of understanding subreddit behavior through clear metrics and visualizations. I wanted to create a tool that could pull real-time data from Reddit and transform it into actionable insights about community engagement, post patterns, and trending topics. Using the PRAW API, I collected post and comment data from any given subreddit over the past three days and presented it using Streamlit’s interactive interface.`,
                    `The app features visualizations like activity timelines, heatmaps, post type distributions, word clouds, and highlights of top contributors and high-engagement posts. These helped users gain a quick overview of any subreddit’s pulse. This project improved my skills in API integration, data processing with pandas, and building clean, responsive dashboards with Streamlit.`
@@ -66,7 +66,7 @@ const projects = [
     title: "MoodSense",
     imageUrl: moodsenseImg,
     iconUrl: moodsenseIcon,
-    techStack: ["React", "Node.js", "MongoDB"],
+    techStack: ["Python, TensorFlow, OpenCV, CNN"],
     githubLink: "https://github.com/Rishik15",
     description: [ `MoodSense started as an exploration into how machines interpret human emotion. I wanted to build a real-time system capable of recognizing facial expressions on the fly using computer vision and deep learning.`,
                    `I used transfer learning with ResNet-18 on the FER-2013 dataset, which contains over 36,000 labeled images of human expressions across 7 emotion classes. The model reached 64% accuracy and was optimized for real-time inference. By integrating OpenCV, I was able to capture live webcam input, detect faces, and classify emotions at around 30 FPS, offering smooth and responsive feedback.`,
@@ -109,8 +109,8 @@ export const ProjectDetail = () => {
   exit={{
     y: "100vh",   
     transition: {
-      type: "tween",
-      mass: 2,
+      type: "spring",
+      mass: 0.5,
       duration: 1,
       delay: 0.5,
     },
@@ -193,7 +193,7 @@ export const ProjectDetail = () => {
       </div>
 
       {/* Third row: Tech stack */}
-      <div className="md:text-base text-sm text-[20px] md:text-[28px] text-black pointer-events-none">
+      <div className="md:text-base text-sm text-[16px] md:text-[24px] text-black pointer-events-none">
         {project.techStack.join(", ")}
       </div>
 

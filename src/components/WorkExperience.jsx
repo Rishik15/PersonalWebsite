@@ -8,10 +8,9 @@ const experiences = [
     title: "Research Assistant",
     supervisor: "Prof. Chengjun Liu, NJIT",
     description: [
-      "Developing novel algorithms for social media data analysis using machine learning techniques",
-      "Conducting experiments to validate research hypotheses",
-      "Collaborating with an interdisciplinary team to publish findings",
-      "Presenting research progress at weekly lab meetings",
+      "Conducting research on skin disease detection using machine learning and image analysis techniques",
+      "Preprocessing and augmenting dermatology image datasets with Python and OpenCV",
+      "Training and analyzing various machine learning models' performance and contributing to research publications",
     ],
   },
   {
@@ -19,10 +18,9 @@ const experiences = [
     title: "Research Assistant",
     supervisor: "Dr. Alisha Pradhan, Department of Informatics, NJIT",
     description: [
-      "Designed and implemented user studies for privacy research",
-      "Analyzed qualitative data using thematic analysis methods",
-      "Developed prototypes for testing privacy interfaces",
-      "Contributed to grant proposals and research publications",
+      "Conducted survey-based research on online security behaviors among older adults",
+      "Analyzed qualitative and quantitative data to inform AI-driven fraud prevention tools",
+      "Contributed to system design recommendations and academic reporting",
     ],
   },
 ];
