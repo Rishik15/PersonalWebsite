@@ -18,16 +18,27 @@ export const Navbar = () => {
     const [iconMode, setIconMode] = useState(false);
 
     useEffect(() => {
-        const storedTheme = localStorage.getItem("theme");
-        if (storedTheme === "dark") {
-        setIsDarkMode(true);
-        setIconMode(true);
-        document.documentElement.classList.add("dark");
-        } else {
-        localStorage.setItem("theme", "light");
-        setIsDarkMode(false);
-        setIconMode(false);
+        let storedTheme = localStorage.getItem("theme");
+
+        if (!storedTheme) {
+            if (document.documentElement.classList.contains("dark")) {
+                storedTheme = "dark";
+            } else {
+                storedTheme = "light";
+            }
         }
+
+        if (storedTheme === "dark") {
+            setIsDarkMode(true);
+            setIconMode(true);  
+            document.documentElement.classList.add("dark");
+        } else {
+            setIsDarkMode(false);
+            setIconMode(false);
+            document.documentElement.classList.remove("dark");
+        }
+
+        localStorage.setItem("theme", storedTheme);
     }, []);
 
     const toggleTheme = () => {
