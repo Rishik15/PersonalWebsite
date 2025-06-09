@@ -102,7 +102,7 @@ export const Projects = forwardRef((props, ref) => {
           {projects.map((proj, idx) => (
             <div
               key={proj.id}
-              className="flex-shrink-0 md:w-[260px] md:h-[350px] w-[200px] h-[250px]"
+              className="flex-shrink-0 md:w-[260px] md:h-[350px] w-[210px] h-[260px]"
               ref={idx === 0 ? cardRef : null}
               onMouseEnter={() => setHoveredCard(idx)}
               onMouseLeave={() => setHoveredCard(null)}
