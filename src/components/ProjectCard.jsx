@@ -18,7 +18,7 @@ export const ProjectCard = ({ project, isHovered , isDragging, clickedIdx, idx, 
 
   return (
     <motion.div
-      className="relative md:w-[260px] md:h-[350px] w-[210px] h-[250px] cursor-pointer "
+      className="relative md:w-[260px] md:h-[350px] w-[210px] h-[260px] cursor-pointer "
       layoutId={`card-container-${project.id}`}
       onClick={() => {
          if (!isDragging && clickedIdx === null) {
@@ -28,18 +28,18 @@ export const ProjectCard = ({ project, isHovered , isDragging, clickedIdx, idx, 
         }
       }}
       style={{
-        borderRadius: "2.5rem",
+        borderRadius: "2rem",
         overflow: clickedIdx === idx ? "visible" : "hidden",
       }}
       animate={clickedIdx == idx ? { scale: 1.03 }
-        : isHovered ? { borderRadius: "0rem" } : {borderRadius: "2.5rem" }}
+        : isHovered ? { borderRadius: "0rem" } : {borderRadius: "2rem" }}
       transition={{ type: "spring", stiffness: 300, damping: 35 , mass: 8}}
     >
       <motion.div
         ref={imageRef}
         className="absolute inset-0 bg-cover bg-center"
-        animate={clickedIdx == idx ? { scale: 1.03, borderRadius: "0rem" }
-          :isHovered ? { scale: 1.03, borderRadius: "0rem" } : { scale: 1.03, borderRadius: "2.5rem" }}
+        animate={clickedIdx == idx ? { borderRadius: "0rem" }
+          :isHovered ? { scale: 1.03, borderRadius: "0rem" } : { scale: 1.03, borderRadius: "2rem" }}
         transition={{
           default: transition,
           layout: { duration: 0.6, ease: "easeInOut" }
