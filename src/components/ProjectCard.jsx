@@ -31,7 +31,8 @@ export const ProjectCard = ({ project, isHovered , isDragging, clickedIdx, idx, 
         borderRadius: "2.5rem",
         overflow: clickedIdx === idx ? "visible" : "hidden",
       }}
-      animate={isHovered ? { borderRadius: "0rem" } : {borderRadius: "2.5rem" }}
+      animate={clickedIdx == idx ? { scale: 1.03 }
+        : isHovered ? { borderRadius: "0rem" } : {borderRadius: "2.5rem" }}
       transition={{ type: "spring", stiffness: 300, damping: 35 , mass: 8}}
     >
       <motion.div
