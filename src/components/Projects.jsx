@@ -63,7 +63,7 @@ export const Projects = forwardRef((props, ref) => {
       if (!frameRef.current || !railRef.current) return;
       const frameWidth = frameRef.current.offsetWidth - getFrameHorizontalPadding();
       const railWidth = railRef.current.scrollWidth;
-      const gap = 24; 
+      const gap = 28; 
       const maxDrag = railWidth > frameWidth ? (railWidth - frameWidth) + gap : 0;
       setDragBounds({ left: -maxDrag, right: 0 });
     }
@@ -90,7 +90,7 @@ export const Projects = forwardRef((props, ref) => {
       >
         <motion.div
           ref={railRef}
-          className="inline-flex space-x-6 py-2"
+          className="inline-flex space-x-7 py-2"
           drag="x"
           onDragStart={() => setIsDragging(true)}
           onDragEnd={() => setIsDragging(false)}

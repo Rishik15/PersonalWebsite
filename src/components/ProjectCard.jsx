@@ -28,23 +28,23 @@ export const ProjectCard = ({ project, isHovered , isDragging, clickedIdx, idx, 
         }
       }}
       style={{
-        borderRadius: "2rem",
+        borderRadius: "2.5rem",
         overflow: clickedIdx === idx ? "visible" : "hidden",
       }}
       animate={clickedIdx == idx ? { scale: 1.03 }
-        : isHovered ? { borderRadius: "0rem" } : {borderRadius: "2rem" }}
+        : isHovered ? { borderRadius: "0rem" } : {borderRadius: "2.5rem" }}
       transition={{ type: "spring", stiffness: 300, damping: 35 , mass: 8}}
     >
       <motion.div
         ref={imageRef}
         className="absolute inset-0 bg-cover bg-center"
-        animate={clickedIdx == idx ? { borderRadius: "0rem" }
-          :isHovered ? { scale: 1.03, borderRadius: "0rem" } : { scale: 1.03, borderRadius: "2rem" }}
+        animate={clickedIdx == idx ? { scale: 1.03 }
+                : isHovered ? { scale: 1.03 } : { scale: 1.03 }}
         transition={{
           default: transition,
           layout: { duration: 0.6, ease: "easeInOut" }
         }}
-        style={{ backgroundImage: `url(${project.imageUrl})` }}
+        style={{ borderRadius: "inherit", backgroundImage: `url(${project.imageUrl})` }}
         layoutId={`card-background-${project.id}`}
       />
 
