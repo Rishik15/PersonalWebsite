@@ -97,7 +97,7 @@ export const Projects = forwardRef((props, ref) => {
           dragConstraints={dragBounds}
           dragElastic={1}
           whileTap={{ cursor: "grabbing" }}
-          transition={{ type: "spring", bounce: 0.5, mass: 0.1, stiffness: 80, damping: 15 }}
+          transition={{ type: "spring", bounce: 0.5, mass: 0.1, stiffness: 30, damping: 10 }}
         >
           {projects.map((proj, idx) => (
             <div
