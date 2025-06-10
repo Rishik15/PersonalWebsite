@@ -59,7 +59,8 @@
 
 @layer base {
   :root {
-    --background: 222 100% 98%;        
+    --background: 222 100% 98%;
+    --background-gradient: radial-gradient(circle at 30% 30%, hsl(222 100% 88%) 0%, hsl(222 100% 98%) 70%);      
     --foreground: 0 0% 12%;           
     --card: 43 100% 90%;               
     --primary: 291 86% 83%;
@@ -71,7 +72,8 @@
   }
 
   .dark {
-    --background: 0 0% 7%;              
+    --background: 0 0% 7%;
+    --background-gradient: radial-gradient(circle at 30% 30%, hsl(0 0% 20%) 0%, hsl(0 0% 7%) 70%);            
     --foreground: 0 0% 85%;           
     --card: 43 100% 90%;                
     --primary: 291 86% 83%;
@@ -94,6 +96,7 @@
     @apply bg-background text-foreground transition-colors duration-300;
     font-family: 'Kanit', sans-serif;
     font-feature-settings: "rlig" 1, "calt" 1;
+    background: var(--background-gradient);
   }
 }
 
