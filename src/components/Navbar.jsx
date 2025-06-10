@@ -81,7 +81,11 @@ export const Navbar = () => {
     };
 
     return (
-        <nav className="w-full transition-colors duration-300">
+        <nav
+            className="w-full transition-colors duration-300"
+            role="navigation"
+            aria-label="Main Navigation"
+        >
         <div className="flex items-center justify-between w-full">
             {/* Desktop Navigation */}
             <div className="hidden md:flex space-x-[32px]">
@@ -114,12 +118,15 @@ export const Navbar = () => {
                 ? "opacity-100 pointer-events-auto"
                 : "opacity-0 pointer-events-none"
             )}
+            role="menu"
+            aria-hidden={!isMenuOpen}
             >
             <div className="flex flex-col space-y-8 text-xl">
                 {navItems.map((item, key) => (
                 <a
                     key={key}
                     href={item.href}
+                    role="menuitem"
                     className="text-foreground text-[20px] font-medium transition-colors duration-200"
                     onClick={() => setIsMenuOpen(false)}
                 >
@@ -181,7 +188,7 @@ export const Navbar = () => {
                         }}
                         />
                     )}
-                    </AnimatePresence>
+                </AnimatePresence>
 
             </button>
             </div>

@@ -84,146 +84,65 @@ export const ProjectDetail = () => {
   if (!project) return <div>Project not found.</div>;
 
   return (
-<motion.div className="relative w-full h-screen overflow-x-hidden no-scrollbar py-[24px] px-[12px]"
-  layoutId={`card-image-${project.id}`}
-  style={{
-    backgroundImage: `url(${project.imageUrl})`,
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    originX: 0.5, originY: 0.5,
-  }}
-  initial={{
-    top: initialRect.top,
-    left: initialRect.left,
-    width: initialRect.width,
-    height: initialRect.height,
-  }}
-  animate={{
-    top: 0,
-    bottom: 0,
-    right: 0,
-    left: 0,
-    width: "100vw",
-    height: "100vh",
-  }}
-  exit={{
-    y: "100vh",   
-    transition: {
-      type: "spring",
-      mass: 0.5,
-      stiffness: 100,
-      damping: 20,
-      duration: 1,
-      delay: 0.5,
-    },
-  }}
-  transition={{
-    type: "tween",
-    mass: 0.5,
-  }}
->
-  <motion.button
-    className="absolute top-6 left-6 z-50 p-2 rounded-full bg-black/50 border border-gray-200 "
-    onClick={() => navigate("/", { state: { scrollToProjects: true } })}
-    initial={{ y: -60, opacity: 0 }}
-    exit={{
-      y: -60, opacity: 0, duration: 2,
-      transition: {
-        type: "spring",
-        stiffness: 300,
-        damping: 20,
-        mass: 2,
-      },
-    }}
-    animate={{ y: 0, opacity: 1 }}
-    transition={{
-      type: "spring",
-      stiffness: 300,
-      damping: 20,
-      bounce: 1,
-      mass: 2,
-      delay: 0.3,
-    }}
-  >
-    <ArrowLeft className="w-4 h-4 text-black" />
-  </motion.button>
-
-  {/* FLEX CONTAINER */}
-  <motion.div
-    className="relative z-20 pt-[120px] px-[32px] md:px-[48px] flex flex-col md:flex-row md:items-start md:justify-between h-auto w-full gap-8 text-black"
-  >
-    {/* LEFT COLUMN */}
-    <motion.div className="flex-1 flex flex-col space-y-4"
-      initial={{ x: -60, opacity: 0 }}
-      exit={{
-        x: -120, opacity: 0, duration: 2,
-          transition: {
-          type: "spring",
-          stiffness: 300,
-          damping: 20,
-          mass: 2,
-        },
+    <motion.main
+      role="main"
+      className="relative w-full h-screen overflow-x-hidden no-scrollbar py-[24px] px-[12px]"
+      layoutId={`card-image-${project.id}`}
+      style={{
+        backgroundImage: `url(${project.imageUrl})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        originX: 0.5,
+        originY: 0.5,
       }}
-      animate={{ x: 0, opacity: 1 }}
-       transition={{
-          type: "spring",
-          stiffness: 300,
-          damping: 20,
-          bounce: 1,
-          mass: 2,
-          delay: 0.3,
-        }}
-    >
-      {/* First row: Title + Icon */}
-      <div className="flex items-center">
-        <motion.h2
-          className="md:text-[48px] text-[32px] font-bold font-kanit text-black pointer-events-none"
-          layoutId={`card-title-${project.id}`}
-        >
-          {project.title}
-        </motion.h2>
-        <img
-          src={project.iconUrl}
-          alt={`${project.title} icon`}
-          className="md:ml-2 ml-1 md:h-[50px] md:w-[50px] h-[35px] w-[35px] pointer-events-none"
-        />
-      </div>
-
-      {/* Second row: Technologies Used */}
-      <div className="md:text-lg text-base font-bold text-black text-[20px] md:text-[28px] font-kanit pointer-events-none">
-        Technologies Used:
-      </div>
-
-      {/* Third row: Tech stack */}
-      <div className="md:text-base text-sm text-[16px] md:text-[24px] text-black pointer-events-none">
-        {project.techStack.join(", ")}
-      </div>
-
-      {/* Fourth row: GitHub icon */}
-      <a
-        href={project.githubLink}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="mt-2 text-black"
-      >
-        <Github className="w-8 h-8" />
-      </a>
-    </ motion.div>
-
-    {/* RIGHT COLUMN: DESCRIPTION */}
-    <motion.div className="flex-1 flex items-start md:items-start justify-start leading-relaxed"
-      initial={{ x: 60, opacity: 0 }}
+      initial={{
+        top: initialRect.top,
+        left: initialRect.left,
+        width: initialRect.width,
+        height: initialRect.height,
+      }}
+      animate={{
+        top: 0,
+        bottom: 0,
+        right: 0,
+        left: 0,
+        width: "100vw",
+        height: "100vh",
+      }}
       exit={{
-        x: 120, opacity: 0, duration: 2, 
+        y: "100vh",
         transition: {
           type: "spring",
-          stiffness: 300,
+          mass: 0.5,
+          stiffness: 100,
           damping: 20,
-          mass: 2,
+          duration: 1,
+          delay: 0.5,
         },
       }}
-      animate={{ x: 0, opacity: 1 }}
       transition={{
+        type: "tween",
+        mass: 0.5,
+      }}
+    >
+      <motion.button
+        className="absolute top-6 left-6 z-50 p-2 rounded-full bg-black/50 border border-gray-200"
+        onClick={() => navigate("/", { state: { scrollToProjects: true } })}
+        aria-label="Back to Projects"
+        initial={{ y: -60, opacity: 0 }}
+        exit={{
+          y: -60,
+          opacity: 0,
+          duration: 2,
+          transition: {
+            type: "spring",
+            stiffness: 300,
+            damping: 20,
+            mass: 2,
+          },
+        }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{
           type: "spring",
           stiffness: 300,
           damping: 20,
@@ -231,19 +150,108 @@ export const ProjectDetail = () => {
           mass: 2,
           delay: 0.3,
         }}
-    >
-      <div className="space-y-4">
-        {project.description.map((para, index) => (
-          <p key={index}>
-            {para}
-          </p>
-        ))}
-      </div>
-    </ motion.div>
-  </motion.div>
-</motion.div>
+      >
+        <ArrowLeft className="w-4 h-4 text-black" />
+      </motion.button>
 
+      {/* FLEX CONTAINER */}
+      <motion.div
+        className="relative z-20 pt-[120px] px-[32px] md:px-[48px] flex flex-col md:flex-row md:items-start md:justify-between h-auto w-full gap-8 text-black"
+      >
+        {/* LEFT COLUMN */}
+        <motion.div
+          className="flex-1 flex flex-col space-y-4"
+          initial={{ x: -60, opacity: 0 }}
+          exit={{
+            x: -120,
+            opacity: 0,
+            duration: 2,
+            transition: {
+              type: "spring",
+              stiffness: 300,
+              damping: 20,
+              mass: 2,
+            },
+          }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{
+            type: "spring",
+            stiffness: 300,
+            damping: 20,
+            bounce: 1,
+            mass: 2,
+            delay: 0.3,
+          }}
+        >
+          {/* First row: Title + Icon */}
+          <div className="flex items-center">
+            <motion.h2
+              className="md:text-[48px] text-[32px] font-bold font-kanit text-black pointer-events-none"
+              layoutId={`card-title-${project.id}`}
+            >
+              {project.title}
+            </motion.h2>
+            <img
+              src={project.iconUrl}
+              alt={`${project.title} icon`}
+              className="md:ml-2 ml-1 md:h-[50px] md:w-[50px] h-[35px] w-[35px] pointer-events-none"
+            />
+          </div>
 
+          {/* Second row: Technologies Used */}
+          <div className="md:text-lg text-base font-bold text-black text-[20px] md:text-[28px] font-kanit pointer-events-none">
+            Technologies Used:
+          </div>
 
+          {/* Third row: Tech stack */}
+          <div className="md:text-base text-sm text-[16px] md:text-[24px] text-black pointer-events-none">
+            {project.techStack.join(", ")}
+          </div>
+
+          {/* Fourth row: GitHub icon */}
+          <a
+            href={project.githubLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="View GitHub Repository"
+            className="mt-2 text-black"
+          >
+            <Github className="w-8 h-8" />
+          </a>
+        </motion.div>
+
+        {/* RIGHT COLUMN: DESCRIPTION */}
+        <motion.div
+          className="flex-1 flex items-start md:items-start justify-start leading-relaxed"
+          initial={{ x: 60, opacity: 0 }}
+          exit={{
+            x: 120,
+            opacity: 0,
+            duration: 2,
+            transition: {
+              type: "spring",
+              stiffness: 300,
+              damping: 20,
+              mass: 2,
+            },
+          }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{
+            type: "spring",
+            stiffness: 300,
+            damping: 20,
+            bounce: 1,
+            mass: 2,
+            delay: 0.3,
+          }}
+        >
+          <div className="space-y-4">
+            {project.description.map((para, index) => (
+              <p key={index}>{para}</p>
+            ))}
+          </div>
+        </motion.div>
+      </motion.div>
+    </motion.main>
   );
 };

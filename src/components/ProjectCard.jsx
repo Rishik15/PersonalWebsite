@@ -2,12 +2,13 @@ import { useNavigate } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 
-export const ProjectCard = ({ project, isHovered , isDragging, clickedIdx, idx, onCardClick }) => {
+export const ProjectCard = ({ project, isHovered, isDragging, clickedIdx, idx, onCardClick }) => {
   const navigate = useNavigate();
   const imageRef = useRef(null);
   const transition = { duration: 0.6, ease: [0.6, 0.01, -0.05, 0.9] };
   const [initialRect, setInitialRect] = useState(null);
   const [exited, setExited] = useState(false);
+
   useEffect(() => {
     if (exited && clickedIdx === idx && initialRect) {
       navigate(`/project/${project.id}`, {
@@ -16,47 +17,82 @@ export const ProjectCard = ({ project, isHovered , isDragging, clickedIdx, idx, 
     }
   }, [exited, clickedIdx, idx, initialRect, navigate, project.id]);
 
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      if (!isDragging && clickedIdx === null) {
+        const rect = imageRef.current.getBoundingClientRect();
+        setInitialRect(rect);
+        onCardClick();
+      }
+    }
+  };
+
   return (
     <motion.div
       className="relative md:w-[260px] md:h-[350px] w-[210px] h-[260px] cursor-pointer "
       layoutId={`card-container-${project.id}`}
       onClick={() => {
-         if (!isDragging && clickedIdx === null) {
+        if (!isDragging && clickedIdx === null) {
           const rect = imageRef.current.getBoundingClientRect();
           setInitialRect(rect);
           onCardClick();
         }
       }}
+      onKeyDown={handleKeyDown}
+      role="button"
+      tabIndex={0}
+      aria-label={`View details for ${project.title}`}
+      aria-pressed={clickedIdx === idx}
       style={{
         borderRadius: "2.5rem",
         overflow: clickedIdx === idx ? "visible" : "hidden",
       }}
-      animate={clickedIdx == idx ? { scale: 1.03, borderRadius: "0rem" }
-        : isHovered ? { borderRadius: "0rem" } : {borderRadius: "2.5rem" }}
-      transition={{ type: "spring", stiffness: 300, damping: 35 , mass: 8}}
+      animate={
+        clickedIdx == idx
+          ? { scale: 1.03, borderRadius: "0rem" }
+          : isHovered
+          ? { borderRadius: "0rem" }
+          : { borderRadius: "2.5rem" }
+      }
+      transition={{ type: "spring", stiffness: 300, damping: 35, mass: 8 }}
     >
       <motion.div
         ref={imageRef}
         className="absolute inset-0 bg-cover bg-center"
-        animate={clickedIdx == idx ? { scale: 1.03 }
-                : isHovered ? { scale: 1.03 } : { scale: 1.03 }}
+        animate={
+          clickedIdx == idx
+            ? { scale: 1.03 }
+            : isHovered
+            ? { scale: 1.03 }
+            : { scale: 1.03 }
+        }
         transition={{
           default: transition,
-          layout: { duration: 0.6, ease: "easeInOut" }
+          layout: { duration: 0.6, ease: "easeInOut" },
         }}
-        style={{ borderRadius: "inherit", backgroundImage: `url(${project.imageUrl})` }}
+        style={{
+          borderRadius: "inherit",
+          backgroundImage: `url(${project.imageUrl})`,
+        }}
         layoutId={`card-background-${project.id}`}
       />
 
       <motion.div
-        className="relative z-10 flex items-center h-full pl-2 md:pl-2" 
-        animate={ clickedIdx === idx ? { y: "100vh", opacity: 0 }
-        :isHovered ? { y: -20 } : { y: 0 }}
+        className="relative z-10 flex items-center h-full pl-2 md:pl-2"
+        animate={
+          clickedIdx === idx
+            ? { y: "100vh", opacity: 0 }
+            : isHovered
+            ? { y: -20 }
+            : { y: 0 }
+        }
         onAnimationComplete={() => {
-        if (clickedIdx === idx) setExited(true);}}
+          if (clickedIdx === idx) setExited(true);
+        }}
         transition={
           clickedIdx === idx
-            ? { duration: 0.6, ease: "easeIn" }          
+            ? { duration: 0.6, ease: "easeIn" }
             : { type: "spring", stiffness: 300, damping: 25, mass: 0.5 }
         }
       >
@@ -72,7 +108,6 @@ export const ProjectCard = ({ project, isHovered , isDragging, clickedIdx, idx, 
           className="md:ml-2 ml-1 md:h-[44px] md:w-[44px] h-[28px] w-[28px] pointer-events-none"
         />
       </motion.div>
-      
     </motion.div>
   );
 };

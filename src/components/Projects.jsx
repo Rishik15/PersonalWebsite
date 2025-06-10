@@ -63,8 +63,8 @@ export const Projects = forwardRef((props, ref) => {
       if (!frameRef.current || !railRef.current) return;
       const frameWidth = frameRef.current.offsetWidth - getFrameHorizontalPadding();
       const railWidth = railRef.current.scrollWidth;
-      const gap = 28; 
-      const maxDrag = railWidth > frameWidth ? (railWidth - frameWidth) + gap : 0;
+      const gap = 28;
+      const maxDrag = railWidth > frameWidth ? railWidth - frameWidth + gap : 0;
       setDragBounds({ left: -maxDrag, right: 0 });
     }
     updateConstraints();
@@ -73,23 +73,29 @@ export const Projects = forwardRef((props, ref) => {
   }, []);
 
   return (
-    <div
+    <section
       id="projects"
-      ref={ref} 
+      ref={ref}
+      aria-labelledby="projects-heading"
       className="w-full flex flex-col items-center space-y-[20px] md:space-y-[48px]"
     >
       <div className="md:px-[88px] sm:px-[52px] px-[40px] w-full">
-        <h2 className="text-left text-foreground text-[24px] md:text-[32px] font-bold transition-colors duration-200">
+        <h2
+          id="projects-heading"
+          className="text-left text-foreground text-[24px] md:text-[32px] font-bold transition-colors duration-200"
+        >
           PROJECTS
         </h2>
       </div>
-     <div
+      <div
         ref={frameRef}
         className="w-full overflow-x-auto no-scrollbar md:px-[88px] sm:px-[52px] px-[40px]"
         style={{ WebkitOverflowScrolling: "touch" }}
       >
         <motion.div
           ref={railRef}
+          role="group"
+          aria-label="Projects Carousel"
           className="inline-flex space-x-7 py-2"
           drag="x"
           onDragStart={() => setIsDragging(true)}
@@ -102,6 +108,8 @@ export const Projects = forwardRef((props, ref) => {
           {projects.map((proj, idx) => (
             <div
               key={proj.id}
+              role="group"
+              aria-label={proj.title}
               className="flex-shrink-0 md:w-[260px] md:h-[350px] w-[210px] h-[260px]"
               ref={idx === 0 ? cardRef : null}
               onMouseEnter={() => setHoveredCard(idx)}
@@ -112,14 +120,14 @@ export const Projects = forwardRef((props, ref) => {
                 project={proj}
                 isHovered={hoveredCard === idx}
                 isDragging={isDragging}
-                clickedIdx={clickedIdx }
-                idx = {idx}
+                clickedIdx={clickedIdx}
+                idx={idx}
                 onCardClick={() => setClickedIdx(idx)}
               />
             </div>
           ))}
         </motion.div>
       </div>
-    </div>
+    </section>
   );
 });

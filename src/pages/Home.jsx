@@ -13,7 +13,7 @@ const ScrollFadeIn = ({ children, delay = 0 }) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 56 }}
-      animate={{ opacity: 1, y: 0 }} 
+      animate={{ opacity: 1, y: 0 }}
       transition={{
         type: "spring",
         stiffness: 120,
@@ -41,8 +41,9 @@ export const Home = ({ projectsRef }) => {
   }, []);
 
   return (
-    <motion.div
+    <motion.main
       id="top"
+      role="main"
       className="min-h-screen overflow-x-hidden px-4 sm:px-6 md:px-8 py-8 sm:py-12 md:py-16 space-y-[56px] md:space-y-[64px] no-scrollbar"
       initial={false}
     >
@@ -62,7 +63,7 @@ export const Home = ({ projectsRef }) => {
       </ScrollFadeIn>
 
       <ScrollFadeIn delay={0.1}>
-          <div className="-mx-4 sm:-mx-6 md:-mx-8 w-screen">
+        <div className="-mx-4 sm:-mx-6 md:-mx-8 w-screen">
           <Projects ref={projectsRef} />
         </div>
       </ScrollFadeIn>
@@ -97,6 +98,6 @@ export const Home = ({ projectsRef }) => {
           <ArrowUp className="w-4 h-4 md:w-5 md:h-5" />
         </a>
       )}
-    </motion.div>
+    </motion.main>
   );
 };

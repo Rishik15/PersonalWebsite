@@ -29,6 +29,13 @@ const ExperienceItem = ({ experience, isLast }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const toggleExpand = () => setIsExpanded(!isExpanded);
 
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      toggleExpand();
+    }
+  };
+
   return (
     <li className="relative flex gap-2.5 items-baseline group">
       {/* Timeline line and dot */}
@@ -51,6 +58,10 @@ const ExperienceItem = ({ experience, isLast }) => {
       <div className="text-sm text-muted-foreground w-full">
         <div
           onClick={toggleExpand}
+          onKeyDown={handleKeyDown}
+          role="button"
+          aria-expanded={isExpanded}
+          tabIndex={0}
           className="cursor-pointer group flex items-start justify-between"
         >
           <div>
@@ -69,7 +80,11 @@ const ExperienceItem = ({ experience, isLast }) => {
             whileTap={{ scale: 0.95 }}
             className="text-foreground mt-1"
           >
-          {isExpanded ? <ChevronUp className="size-5 md:size-8" /> : <ChevronDown className="size-5 md:size-8" />}
+            {isExpanded ? (
+              <ChevronUp className="size-5 md:size-8" />
+            ) : (
+              <ChevronDown className="size-5 md:size-8" />
+            )}
           </motion.div>
         </div>
 
@@ -83,7 +98,7 @@ const ExperienceItem = ({ experience, isLast }) => {
               className="overflow-hidden"
             >
               <div className="mt-3 pl-2">
-               <ul className="list-disc list-outside pl-5 space-y-2 text-[14px] md:text-[18px]">
+                <ul className="list-disc list-outside pl-5 space-y-2 text-[14px] md:text-[18px]">
                   {experience.description.map((item, idx) => (
                     <motion.li
                       key={idx}
@@ -107,7 +122,10 @@ const ExperienceItem = ({ experience, isLast }) => {
 
 export const WorkExperience = () => {
   return (
-    <section className="flex overflow-hidden">
+    <section
+      className="flex overflow-hidden"
+      aria-labelledby="work-heading"
+    >
       <div
         id="work"
         className="w-full text-foreground flex flex-col space-y-[24px] md:space-y-[48px] items-center"
@@ -118,7 +136,10 @@ export const WorkExperience = () => {
           transition={{ duration: 0.5 }}
           className="md:px-[56px] px-[28px] w-full"
         >
-          <h2 className="text-left text-foreground text-[24px] md:text-[32px] font-bold transition-colors duration-200">
+          <h2
+            id="work-heading"
+            className="text-left text-foreground text-[24px] md:text-[32px] font-bold transition-colors duration-200"
+          >
             WORK EXPERIENCE
           </h2>
         </motion.div>

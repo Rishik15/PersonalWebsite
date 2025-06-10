@@ -22,13 +22,14 @@ function AnimatedRoutes() {
   };
 
   return (
-    
-    <AnimatePresence mode="wait" onExitComplete={handleExitComplete}>
-      <Routes location={location} key={location.pathname}>
-        <Route path="/" element={<Home projectsRef={projectsRef} />} />
-        <Route path="/project/:projectId" element={<ProjectDetail />} />
-      </Routes>
-    </AnimatePresence>
+    <div role="application">
+      <AnimatePresence mode="wait" onExitComplete={handleExitComplete}>
+        <Routes location={location} key={location.pathname}>
+          <Route path="/" element={<Home projectsRef={projectsRef} />} />
+          <Route path="/project/:projectId" element={<ProjectDetail />} />
+        </Routes>
+      </AnimatePresence>
+    </div>
   );
 }
 
