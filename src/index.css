@@ -167,7 +167,7 @@
   }
 
   .btn-primary {
-    @apply px-5 py-3 bg-[#1D1D1D] text-primary font-semibold rounded-[15px] transition-transform hover:scale-[1.05] active:scale-[1.05];
+    @apply px-5 py-3 bg-[#111111] text-primary font-semibold rounded-[15px] transition-transform hover:scale-[1.05] active:scale-[1.05];
   }
 
   .fade-in {
