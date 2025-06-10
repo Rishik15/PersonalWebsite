@@ -3,7 +3,6 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import { Home } from "./pages/Home";
 import { ProjectDetail } from "./pages/ProjectDetail";
-import { CustomCursor } from "./components/CustomCursor";
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -36,7 +35,6 @@ function AnimatedRoutes() {
 export default function App() {
   return (
     <BrowserRouter>
-      <CustomCursor />
       <AnimatedRoutes />
     </BrowserRouter>
   );

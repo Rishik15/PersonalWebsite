@@ -94,7 +94,6 @@
     @apply bg-background text-foreground transition-colors duration-300;
     font-family: 'Kanit', sans-serif;
     font-feature-settings: "rlig" 1, "calt" 1;
-    cursor: none;
   }
 }
 
