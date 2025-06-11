@@ -54,7 +54,7 @@ export const Home = ({ projectsRef }) => {
         </div>
       </ScrollFadeIn>
 
-      <ScrollFadeIn>
+      <ScrollFadeIn  delay={0.4}>
         <WorkExperience />
       </ScrollFadeIn>
 
