@@ -108,6 +108,13 @@ export const ProjectDetail = () => {
         left: 0,
         width: "100vw",
         height: "100vh",
+        transition:{
+          type: "tween",
+          mass: 0.5,
+          stiffness: 100,
+          damping: 20,
+          duration: 0.6,
+        }
       }}
       exit={{
         y: "100vh",
@@ -148,7 +155,7 @@ export const ProjectDetail = () => {
           damping: 20,
           bounce: 1,
           mass: 2,
-          delay: 0.3,
+          delay: 0.7,
         }}
       >
         <ArrowLeft className="w-4 h-4 text-black" />
@@ -161,13 +168,13 @@ export const ProjectDetail = () => {
         {/* LEFT COLUMN */}
         <motion.div
           className="flex-1 flex flex-col space-y-4"
-          initial={{ x: -60, opacity: 0 }}
+          initial={{ x: -80, opacity: 0 }}
           exit={{
             x: -120,
             opacity: 0,
             duration: 2,
             transition: {
-              type: "spring",
+              type: "tween",
               stiffness: 300,
               damping: 20,
               mass: 2,
@@ -175,12 +182,12 @@ export const ProjectDetail = () => {
           }}
           animate={{ x: 0, opacity: 1 }}
           transition={{
-            type: "spring",
+            type: "tween",
             stiffness: 300,
             damping: 20,
             bounce: 1,
             mass: 2,
-            delay: 0.3,
+            delay: 0.7,
           }}
         >
           {/* First row: Title + Icon */}
@@ -223,13 +230,13 @@ export const ProjectDetail = () => {
         {/* RIGHT COLUMN: DESCRIPTION */}
         <motion.div
           className="flex-1 flex items-start md:items-start justify-start leading-relaxed"
-          initial={{ x: 60, opacity: 0 }}
+          initial={{ x: 80, opacity: 0 }}
           exit={{
             x: 120,
             opacity: 0,
             duration: 2,
             transition: {
-              type: "spring",
+              type: "tween",
               stiffness: 300,
               damping: 20,
               mass: 2,
@@ -237,12 +244,12 @@ export const ProjectDetail = () => {
           }}
           animate={{ x: 0, opacity: 1 }}
           transition={{
-            type: "spring",
+            type: "tween",
             stiffness: 300,
             damping: 20,
             bounce: 1,
             mass: 2,
-            delay: 0.3,
+            delay: 0.7,
           }}
         >
           <div className="space-y-4">

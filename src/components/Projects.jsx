@@ -114,7 +114,6 @@ export const Projects = forwardRef((props, ref) => {
               ref={idx === 0 ? cardRef : null}
               onMouseEnter={() => setHoveredCard(idx)}
               onMouseLeave={() => setHoveredCard(null)}
-              onCardClick={() => setClickedIdx(idx)}
             >
               <ProjectCard
                 project={proj}
