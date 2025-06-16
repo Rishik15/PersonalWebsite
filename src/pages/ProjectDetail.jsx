@@ -39,18 +39,6 @@ const projects = [
                   ],
   },
   {
-    id: "tunes2notes",
-    title: "Tunes2Notes",
-    imageUrl: tunes2notesImg,
-    iconUrl: tunes2notesIcon,
-    techStack: ["Python", "Librosa", "Magenta", "Music21", "Streamlit", "Pydub"],
-    githubLink: "https://github.com/Rishik15",
-    description:[ `Tunes2Notes was born from my curiosity about how audio could be converted into readable sheet music using machine learning. I started with the idea of simplifying music transcription — especially when dealing with multi-instrument audio.`,
-                  `The project uses Spleeter to isolate piano tracks from full audio recordings, and then applies Google’s Onsets and Frames model to transcribe the piano into note sequences. These sequences are converted into sheet music using the music21 library, creating a full pipeline from audio input to printable musical notation.`,
-                  `This project helped me explore state-of-the-art tools in audio ML, understand polyphonic music transcription, and build a practical application that merges music and AI seamlessly.`
-                  ],
-  },
-  {
     id: "threadinsight",
     title: "ThreadInsight",
     imageUrl: threadinsightImg,

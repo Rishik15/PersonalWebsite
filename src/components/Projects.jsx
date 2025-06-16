@@ -32,12 +32,6 @@ const projects = [
     iconUrl: moodsenseIcon,
   },
   {
-    id: "tunes2notes",
-    title: "Tunes2Notes",
-    imageUrl: tunes2notesImg,
-    iconUrl: tunes2notesIcon,
-  },
-  {
     id: "threadinsight",
     title: "ThreadInsight",
     imageUrl: threadinsightImg,
