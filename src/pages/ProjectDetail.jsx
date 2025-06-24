@@ -99,7 +99,7 @@ export const ProjectDetail = () => {
         transition:{
           type: "tween",
           mass: 0.5,
-          stiffness: 100,
+          stiffness:100,
           damping: 20,
           duration: 0.6,
         }
