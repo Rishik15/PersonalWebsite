@@ -65,7 +65,7 @@ export const Navbar = () => {
         ripple.style.left = `${centerX - 50}px`;
         ripple.style.top = `${centerY - 50}px`;
 
-        ripple.style.backgroundColor = isDarkMode ? "#F5FAFF" : "#111111";
+        ripple.style.backgroundColor = isDarkMode ? "#F5FAFF" : "#151515";
 
         ripple.classList.remove("scale-0");
         ripple.classList.add("scale-[50]");
@@ -141,7 +141,7 @@ export const Navbar = () => {
             <div className="relative w-[24px] h-[24px] z-50">
             <div
             id="ripple"
-            className="absolute w-[100px] h-[100px] rounded-full bg-[#111111] pointer-events-none z-50 opacity-100 scale-0 transition-all duration-[2000ms] ease-in-out"
+            className="absolute w-[100px] h-[100px] rounded-full bg-[#151515] pointer-events-none z-50 opacity-100 scale-0 transition-all duration-[2000ms] ease-in-out"
             style={{
                 transformOrigin: "center center",
                 overflow: "hidden",
