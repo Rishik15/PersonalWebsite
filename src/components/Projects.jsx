@@ -5,8 +5,8 @@ import forkitImg from "../assets/Forkit.png";
 import forkitIcon from "../assets/forkiticon.png";
 import quickdrawImg from "../assets/Quickdraw.png";
 import quickdrawIcon from "../assets/quickdrawicon.png";
-import tunes2notesImg from "../assets/Tunes2Notes.png";
-import tunes2notesIcon from "../assets/tunes2notesicon.png";
+import learnalongImg from "../assets/learnAlong.png";
+import learnalongicon from "../assets/learnalongicon.png"
 import moodsenseImg from "../assets/moodSense.png";
 import moodsenseIcon from "../assets/moodsenseicon.png";
 import threadinsightImg from "../assets/ThreadInsight.png";
@@ -18,6 +18,12 @@ const projects = [
     title: "ForkIt",
     imageUrl: forkitImg,
     iconUrl: forkitIcon,
+  },
+  {
+    id: "learnalong",
+    title: "LearnAlong",
+    imageUrl: learnalongImg,
+    iconUrl: learnalongicon,
   },
   {
     id: "quickdraw",
@@ -37,6 +43,7 @@ const projects = [
     imageUrl: threadinsightImg,
     iconUrl: threadinsightIcon,
   },
+
 ];
 
 function getFrameHorizontalPadding() {

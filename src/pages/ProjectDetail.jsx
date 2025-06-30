@@ -6,8 +6,8 @@ import forkitImg from "../assets/Forkit.png";
 import forkitIcon from "../assets/forkiticon.png";
 import quickdrawImg from "../assets/Quickdraw.png";
 import quickdrawIcon from "../assets/quickdrawicon.png";
-import tunes2notesImg from "../assets/Tunes2Notes.png";
-import tunes2notesIcon from "../assets/tunes2notesicon.png";
+import learnalongImg from "../assets/learnAlong.png";
+import learnalongicon from "../assets/learnalongicon.png"
 import moodsenseImg from "../assets/moodSense.png";
 import moodsenseIcon from "../assets/moodsenseicon.png";
 import threadinsightImg from "../assets/ThreadInsight.png";
@@ -25,6 +25,20 @@ const projects = [
                    `For this project, I developed the entire backend recommendation system. I implemented two separate models — a TF-IDF-based model to capture subtle textual preferences and a categorical similarity model to match structured features like cuisine type and pricing. These models were then combined to compute overall scores for each restaurant, tailored to the group's aggregated preferences.`
                   ]
     ,
+  },
+  {
+    id: "learnalong",
+    title: "Learn Along",
+    imageUrl: learnalongImg,
+    iconUrl: learnalongicon,
+    techStack: [
+      "React", "Flask", "MongoDB", "LLaMA 2 (Hugging Face)", "RAG"],
+    githubLink: "https://github.com/Rishik15",
+    description: [
+      `Learn Along is an AI-powered web application that enables users to learn interactively from YouTube videos through an LLM chatbot and auto-generated quizzes. Leveraging Retrieval-Augmented Generation (RAG), the system processes transcripts from video links and allows users to ask questions or test their understanding in real time.`,
+      `We built the app end-to-end with React and Tailwind CSS on the frontend and Flask on the backend. We used the YouTube Transcript API for text extraction, Sentence Transformers to generate dense embeddings, and MongoDB’s vector search to retrieve semantically relevant chunks. These were passed to a Hugging Face-hosted LLaMA 2 model for contextual response generation. The backend also includes
+       custom session management, chat history tracking, prompt engineering, and scalable RAG pipeline integration.`
+    ]
   },
   {
     id: "quickdraw",
@@ -95,13 +109,13 @@ export const ProjectDetail = () => {
         right: 0,
         left: 0,
         width: "100vw",
-        height: "100vh",
+        height: "108vh",
         transition:{
           type: "tween",
           mass: 0.5,
           stiffness:100,
           damping: 20,
-          duration: 0.6,
+          duration: 1,
         }
       }}
       exit={{
@@ -143,7 +157,7 @@ export const ProjectDetail = () => {
           damping: 20,
           bounce: 1,
           mass: 2,
-          delay: 0.7,
+          delay: 1.1,
         }}
       >
         <ArrowLeft className="w-4 h-4 text-black" />
@@ -175,7 +189,7 @@ export const ProjectDetail = () => {
             damping: 20,
             bounce: 1,
             mass: 2,
-            delay: 0.7,
+            delay: 1.1,
           }}
         >
           {/* First row: Title + Icon */}
@@ -237,7 +251,7 @@ export const ProjectDetail = () => {
             damping: 20,
             bounce: 1,
             mass: 2,
-            delay: 0.7,
+            delay: 1.1,
           }}
         >
           <div className="space-y-4">
