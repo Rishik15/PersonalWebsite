@@ -87,7 +87,6 @@ export const Navbar = () => {
             aria-label="Main Navigation"
         >
         <div className="flex items-center justify-between w-full">
-            {/* Desktop Navigation */}
             <div className="hidden md:flex space-x-[32px]">
             {navItems.map((item, key) => (
                 <a
@@ -100,7 +99,6 @@ export const Navbar = () => {
             ))}
             </div>
 
-            {/* Mobile Menu Toggle */}
             <button
             onClick={() => setIsMenuOpen((prev) => !prev)}
             className="md:hidden text-foreground z-50"
@@ -109,7 +107,6 @@ export const Navbar = () => {
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
 
-            {/* Mobile Navigation Menu */}
             <div
                 className={cn(
                     "fixed inset-0 backdrop-blur-lg bg-background/50 border border-border shadow-lg z-40 flex flex-col items-center justify-center",
@@ -137,7 +134,6 @@ export const Navbar = () => {
             </div>
             </div>
 
-            {/* Theme Toggle Button */}
             <div className="relative w-[24px] h-[24px] z-50">
             <div
             id="ripple"
