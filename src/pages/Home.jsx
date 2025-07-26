@@ -77,7 +77,7 @@ export const Home = ({ projectsRef }) => {
           href="#top"
           aria-label="Scroll to Top"
           className={`
-            fixed bottom-4 right-3 md:bottom-6 md:right-5 z-50 
+            fixed bottom-6 right-4 md:right-5 z-50 
             p-2 rounded-full transition-transform duration-300 hover:scale-110
             text-foreground
             ${

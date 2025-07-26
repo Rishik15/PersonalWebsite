@@ -105,7 +105,7 @@ const Carousel = ({ children }) => {
 
         return (
           <div
-            className={`absolute w-full h-full transition-all duration-800 ${
+            className={`absolute w-full h-full transition-all duration-1000 ${
               active !== i ? "blur-sm opacity-50" : ""
             }`}
             style={{
@@ -145,22 +145,26 @@ export const Skills = () => {
   const skills = [
     {
       front: "Programming Languages",
-      back: "Python, Java, C, SQL, JavaScript",
+      back: "Python, Java, C++, SQL, JavaScript",
     },
     {
       front: "Machine Learning & Data Science",
-      back: "Pandas, NumPy, Seaborn, Scikit-learn, TensorFlow, Pytorch, Tableau",
+      back: "Scikit-learn, TensorFlow, PyTorch, Pandas, NumPy, Matplotlib, Seaborn, NLP, OpenCV",
+    },
+    {
+      front: "Deep Learning",
+       back: "Convolutional Neural Networks, Recurrent Neural Networks, Graph Neural Networks, Transfer Learning",
     },
     {
       front: "Web Development",
-      back: "React.js, HTML, CSS, Streamlit, Flask, REST APIs",
+      back: "React.js, Tailwind CSS, HTML, CSS, Flask, Streamlit, Vite",
     },
     {
       front: "Tools & Platforms",
-      back: "Git, GitHub, MySQL, Firebase, Linux, Docker, Visual Studio, Anaconda, Microsoft Azure, MS Excel",
+      back: "Git, GitHub, MongoDB, MySQL, Firebase, Azure, Visual Studio, Anaconda",
     },
     {
-      front: "Certificates",
+      front: "Certifications",
       back: "Data Science Fundamentals (NASBA), Microsoft Certified: Azure Data Scientist Associate",
     },
   ];

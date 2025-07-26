@@ -7,7 +7,7 @@ import forkitIcon from "../assets/forkiticon.png";
 import quickdrawImg from "../assets/Quickdraw.png";
 import quickdrawIcon from "../assets/quickdrawicon.png";
 import learnalongImg from "../assets/learnAlong.png";
-import learnalongicon from "../assets/learnalongicon.png"
+import learnalongicon from "../assets/learnalongicon.png";
 import moodsenseImg from "../assets/moodSense.png";
 import moodsenseIcon from "../assets/moodsenseicon.png";
 import threadinsightImg from "../assets/ThreadInsight.png";
@@ -19,38 +19,45 @@ const projects = [
     title: "ForkIt",
     imageUrl: forkitImg,
     iconUrl: forkitIcon,
-    techStack: ["Python", "Flask", "Scikit-learn", "Pandas", "TF-IDF", "Cosine Similarity"],
+    techStack: [
+      "Python",
+      "Flask",
+      "Scikit-learn",
+      "Pandas",
+      "TF-IDF",
+      "Cosine Similarity",
+    ],
     githubLink: "https://github.com/Rishik15",
-    description: [ `Fork It is a group restaurant recommendation app designed to solve a common problem: deciding where to eat with friends. Whether it's conflicting preferences, dietary restrictions, or just indecision, Fork It helps simplify the choice. Focused on the Trenton area, the app takes multiple users' inputs and returns a list of restaurants that best match the group’s combined preferences.`,
-                   `For this project, I developed the entire backend recommendation system. I implemented two separate models — a TF-IDF-based model to capture subtle textual preferences and a categorical similarity model to match structured features like cuisine type and pricing. These models were then combined to compute overall scores for each restaurant, tailored to the group's aggregated preferences.`
-                  ]
-    ,
+    description: [
+      `Fork It is a group restaurant recommendation app designed to solve a common problem: deciding where to eat with friends. Whether it's conflicting preferences, dietary restrictions, or just indecision, Fork It helps simplify the choice. Focused on the Trenton area, the app takes multiple users' inputs and returns a list of restaurants that best match the group’s combined preferences.`,
+      `For this project, I developed the entire backend recommendation system. I implemented two separate models — a TF-IDF-based model to capture subtle textual preferences and a categorical similarity model to match structured features like cuisine type and pricing. These models were then combined to compute overall scores for each restaurant, tailored to the group's aggregated preferences.`,
+    ],
   },
   {
     id: "learnalong",
     title: "Learn Along",
     imageUrl: learnalongImg,
     iconUrl: learnalongicon,
-    techStack: [
-      "React", "Flask", "MongoDB", "LLaMA 2 (Hugging Face)", "RAG"],
+    techStack: ["React", "Flask", "MongoDB", "LLaMA 2 (Hugging Face)", "RAG"],
     githubLink: "https://github.com/Rishik15",
     description: [
       `Learn Along is an AI-powered web application that enables users to learn interactively from YouTube videos through an LLM chatbot and auto-generated quizzes. Leveraging Retrieval-Augmented Generation (RAG), the system processes transcripts from video links and allows users to ask questions or test their understanding in real time.`,
-      `We built the app end-to-end with React and Tailwind CSS on the frontend and Flask on the backend. We used the YouTube Transcript API for text extraction, Sentence Transformers to generate dense embeddings, and MongoDB’s vector search to retrieve semantically relevant chunks. These were passed to a Hugging Face-hosted LLaMA 2 model for contextual response generation. The backend also includes
-       custom session management, chat history tracking, prompt engineering, and scalable RAG pipeline integration.`
-    ]
+      `We built the app end-to-end with React and Tailwind CSS on the frontend and Flask on the backend. We used the YouTube Transcript API for text extraction, Sentence Transformers to generate embeddings, and MongoDB’s vector search to retrieve semantically relevant chunks. These were passed to a Hugging Face-hosted LLaMA 2 model for contextual response generation. The backend also includes
+       custom session management, chat history tracking and scalable RAG pipeline integration.`,
+    ],
   },
   {
     id: "quickdraw",
     title: "Quick, Draw!",
     imageUrl: quickdrawImg,
     iconUrl: quickdrawIcon,
-    techStack: ["\Python", "Flask", "Numpy", "Tensorflow", "LSTM(RNN)"],
+    techStack: ["Python", "Flask", "Numpy", "Tensorflow", "LSTM(RNN)"],
     githubLink: "https://github.com/Rishik15",
-    description: [ `While learning more about machine learning, I became particularly curious about how sequence-based models like LSTMs work in practice. That curiosity led me to Google’s Quick, Draw! game and its dataset. So I wanted to try making something similar`,
-                   `I took this opportunity to build a full-stack doodle classification system where the backend LSTM model was trained on 20 object classes using real-world stroke data, reaching 97% accuracy. The system transforms raw JSON strokes into sequence data, then feeds them to the LSTM. I designed Flask APIs to handle real-time sketch input and return live predictions, keeping latency low for instant user feedback.`,
-                   `This project not only helped me understand RNNs and preprocessing pipelines deeply but also sharpened my skills in backend deployment, model optimization, and serving ML models effectively in real-world apps.`
-                  ],
+    description: [
+      `While learning more about machine learning, I became particularly curious about how sequence-based models like LSTMs work in practice. That led me to Google’s Quick, Draw! game and its dataset. So I wanted to try making something similar`,
+      `I took this opportunity to build a full-stack doodle classification system where the backend LSTM model was trained on 20 object classes using real-world stroke data, reaching 97% accuracy. The system transforms raw JSON strokes into sequence data, then feeds them to the LSTM. I designed Flask APIs to handle real-time sketch input and return live predictions, keeping latency low for instant user feedback.`,
+      `This project not only helped me understand RNNs and preprocessing pipelines deeply but also sharpened my skills in backend deployment, model optimization, and serving ML models effectively in real-world apps.`,
+    ],
   },
   {
     id: "threadinsight",
@@ -59,9 +66,10 @@ const projects = [
     iconUrl: threadinsightIcon,
     techStack: ["Python, Streamlit, Pandas, Matplotlib, Seaborn, PRAW"],
     githubLink: "https://github.com/Rishik15",
-    description: [ `ThreadInsight was developed to simplify the process of understanding subreddit behavior through clear metrics and visualizations. I wanted to create a tool that could pull real-time data from Reddit and transform it into actionable insights about community engagement, post patterns, and trending topics. Using the PRAW API, I collected post and comment data from any given subreddit over the past three days and presented it using Streamlit’s interactive interface.`,
-                   `The app features visualizations like activity timelines, heatmaps, post type distributions, word clouds, and highlights of top contributors and high-engagement posts. These helped users gain a quick overview of any subreddit’s pulse. This project improved my skills in API integration, data processing with pandas, and building clean, responsive dashboards with Streamlit.`
-                  ],
+    description: [
+      `ThreadInsight was developed to simplify the process of understanding subreddit behavior through clear metrics and visualizations. I wanted to create a tool that could pull real-time data from Reddit and transform it into actionable insights about community engagement, post patterns, and trending topics. Using the PRAW API, I collected post and comment data from any given subreddit over the past three days and presented it using Streamlit’s interactive interface.`,
+      `The app features visualizations like activity timelines, heatmaps, post type distributions, word clouds, and highlights of top contributors and high-engagement posts. These helped users gain a quick overview of any subreddit’s activity. This project improved my skills in API integration, data processing with pandas, and building clean, responsive dashboards with Streamlit.`,
+    ],
   },
   {
     id: "moodsense",
@@ -70,10 +78,11 @@ const projects = [
     iconUrl: moodsenseIcon,
     techStack: ["Python, TensorFlow, OpenCV, CNN"],
     githubLink: "https://github.com/Rishik15",
-    description: [ `MoodSense started as an exploration into how machines interpret human emotion. I wanted to build a real-time system capable of recognizing facial expressions on the fly using computer vision and deep learning.`,
-                   `I used transfer learning with ResNet-18 on the FER-2013 dataset, which contains over 36,000 labeled images of human expressions across 7 emotion classes. The model reached 64% accuracy and was optimized for real-time inference. By integrating OpenCV, I was able to capture live webcam input, detect faces, and classify emotions at around 30 FPS, offering smooth and responsive feedback.`,
-                   `This project helped me gain a deeper understanding of convolutional architectures, real-time video processing, and the challenges of emotion recognition in unconstrained environments.`
-                  ],
+    description: [
+      `MoodSense is an experiment on how machines interpret human emotion. I wanted to build a real-time system capable of recognizing facial expressions on the fly using computer vision and deep learning.`,
+      `I used transfer learning with ResNet-18 on the FER-2013 dataset, which contains over 36,000 labeled images of human expressions across 7 emotion classes. By integrating OpenCV, I was able to capture live webcam input, detect faces, and classify emotions, offering smooth and responsive feedback.`,
+      `This project helped me gain a deeper understanding of convolutional architectures, real-time video processing, and the challenges of emotion recognition in unconstrained environments.`,
+    ],
   },
 ];
 
@@ -86,7 +95,7 @@ export const ProjectDetail = () => {
   if (!project) return <div>Project not found.</div>;
 
   return (
-    <motion.main
+    <motion.div
       role="main"
       className="relative w-full h-screen overflow-x-hidden no-scrollbar py-[24px] px-[12px]"
       layoutId={`card-image-${project.id}`}
@@ -109,14 +118,14 @@ export const ProjectDetail = () => {
         right: 0,
         left: 0,
         width: "100vw",
-        height: "108vh",
-        transition:{
+        height: "100vh",
+        transition: {
           type: "tween",
           mass: 0.5,
-          stiffness:100,
+          stiffness: 100,
           damping: 20,
-          duration: 1,
-        }
+          duration: 0.8,
+        },
       }}
       exit={{
         y: "100vh",
@@ -135,7 +144,7 @@ export const ProjectDetail = () => {
       }}
     >
       <motion.button
-        className="absolute top-6 left-6 z-50 p-2 rounded-full bg-black/50 border border-gray-200"
+        className="relative top-6 left-6 z-50 p-2 rounded-full bg-black/50 border border-gray-200"
         onClick={() => navigate("/", { state: { scrollToProjects: true } })}
         aria-label="Back to Projects"
         initial={{ y: -60, opacity: 0 }}
@@ -163,11 +172,7 @@ export const ProjectDetail = () => {
         <ArrowLeft className="w-4 h-4 text-black" />
       </motion.button>
 
-      {/* FLEX CONTAINER */}
-      <motion.div
-        className="relative z-20 pt-[120px] px-[32px] md:px-[48px] flex flex-col md:flex-row md:items-start md:justify-between h-auto w-full gap-8 text-black"
-      >
-        {/* LEFT COLUMN */}
+      <motion.div className="relative z-20 pt-[120px] px-[32px] md:px-[48px] flex flex-col md:flex-row md:items-start md:justify-between h-auto w-full gap-8 text-black">
         <motion.div
           className="flex-1 flex flex-col space-y-4"
           initial={{ x: -80, opacity: 0 }}
@@ -192,7 +197,6 @@ export const ProjectDetail = () => {
             delay: 1.1,
           }}
         >
-          {/* First row: Title + Icon */}
           <div className="flex items-center">
             <motion.h2
               className="md:text-[48px] text-[32px] font-bold font-kanit text-black pointer-events-none"
@@ -207,17 +211,14 @@ export const ProjectDetail = () => {
             />
           </div>
 
-          {/* Second row: Technologies Used */}
           <div className="md:text-lg text-base font-bold text-black text-[20px] md:text-[28px] font-kanit pointer-events-none">
             Technologies Used:
           </div>
 
-          {/* Third row: Tech stack */}
           <div className="md:text-base text-sm text-[16px] md:text-[24px] text-black pointer-events-none">
             {project.techStack.join(", ")}
           </div>
 
-          {/* Fourth row: GitHub icon */}
           <a
             href={project.githubLink}
             target="_blank"
@@ -229,7 +230,6 @@ export const ProjectDetail = () => {
           </a>
         </motion.div>
 
-        {/* RIGHT COLUMN: DESCRIPTION */}
         <motion.div
           className="flex-1 flex items-start md:items-start justify-start leading-relaxed"
           initial={{ x: 80, opacity: 0 }}
@@ -261,6 +261,6 @@ export const ProjectDetail = () => {
           </div>
         </motion.div>
       </motion.div>
-    </motion.main>
+    </motion.div>
   );
 };
