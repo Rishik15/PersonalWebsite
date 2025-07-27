@@ -41,7 +41,7 @@ export const HeroSection = () => {
 
       <div className="mt-[16px] md:mt-[24px] flex flex-wrap gap-[12px]">
         <a
-          href="/RishikReddyYesgari_Resume.pdf"
+          href="/RishikReddyYesgari_Resume_.pdf"
           target="_blank"
           rel="noopener noreferrer"
           className="btn-primary text-[14px] md:text-[16px] cursor-pointer"
