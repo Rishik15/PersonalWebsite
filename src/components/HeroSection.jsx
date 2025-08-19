@@ -6,10 +6,7 @@ export const HeroSection = () => {
   const themeKey = isDarkMode ? "dark" : "light";
 
   return (
-    <section
-      className="w-full"
-      aria-labelledby="hero-heading"
-    >
+    <section className="w-full" aria-labelledby="hero-heading">
       <div>
         <h1
           id="hero-heading"
@@ -34,14 +31,15 @@ export const HeroSection = () => {
             I'm a computer science student at NJIT.
           </p>
           <p className="text-[16px] md:text-[24px] text-hero-subtext">
-            I'm interested in data science and machine learning and enjoy building projects around them.
+            I'm interested in data science and machine learning and enjoy
+            building projects around them.
           </p>
         </div>
       </div>
 
       <div className="mt-[16px] md:mt-[24px] flex flex-wrap gap-[12px]">
         <a
-          href="/RishikReddyYesgari_Resume_.pdf"
+          href="/Resume.pdf"
           target="_blank"
           rel="noopener noreferrer"
           className="btn-primary text-[14px] md:text-[16px] cursor-pointer"
@@ -52,7 +50,9 @@ export const HeroSection = () => {
 
         <button
           onClick={() =>
-            document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
+            document
+              .getElementById("contact")
+              ?.scrollIntoView({ behavior: "smooth" })
           }
           className="btn-primary md:hidden text-[14px] md:text-[16px]"
           aria-label="Scroll to Contact Section"
