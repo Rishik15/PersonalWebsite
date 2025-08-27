@@ -162,11 +162,7 @@ export const Skills = () => {
     {
       front: "Tools & Platforms",
       back: "Git, GitHub, MongoDB, MySQL, Firebase, Azure, Visual Studio, Anaconda",
-    },
-    {
-      front: "Certifications",
-      back: "Data Science Fundamentals (NASBA), Microsoft Certified: Azure Data Scientist Associate",
-    },
+    }
   ];
 
   return (

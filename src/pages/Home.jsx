@@ -8,6 +8,7 @@ import { WorkExperience } from "../components/WorkExperience.jsx";
 import { Skills } from "../components/Skills.jsx";
 import { Projects } from "../components/Projects.jsx";
 import { ContactMe } from "../components/ContactMe.jsx";
+import { Certifications } from "../components/Certificates.jsx";
 
 const ScrollFadeIn = ({ children, delay = 0 }) => {
   return (
@@ -60,6 +61,10 @@ export const Home = ({ projectsRef }) => {
 
       <ScrollFadeIn delay={0.4}>
         <Skills />
+      </ScrollFadeIn>
+
+      <ScrollFadeIn delay = {0.4}>
+        <Certifications />
       </ScrollFadeIn>
 
       <ScrollFadeIn delay={0.1}>

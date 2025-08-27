@@ -140,7 +140,7 @@ export const WorkExperience = () => {
             id="work-heading"
             className="text-left text-foreground text-[24px] md:text-[32px] font-bold transition-colors duration-200"
           >
-            WORK EXPERIENCE
+            Work Experience
           </h2>
         </motion.div>
 

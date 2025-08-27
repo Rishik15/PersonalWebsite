@@ -85,7 +85,7 @@ export const Projects = forwardRef((props, ref) => {
           id="projects-heading"
           className="text-left text-foreground text-[24px] md:text-[32px] font-bold transition-colors duration-200"
         >
-          PROJECTS
+          Projects
         </h2>
       </div>
       <div
