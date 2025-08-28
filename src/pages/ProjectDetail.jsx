@@ -1,5 +1,5 @@
 import { useParams, useNavigate, useLocation } from "react-router-dom";
-import { useEffect } from "react";
+import { useMemo } from "react";
 import { motion } from "framer-motion";
 import { ArrowLeft, Github } from "lucide-react";
 import forkitImg from "../assets/Forkit.png";
@@ -90,41 +90,45 @@ export const ProjectDetail = () => {
   const { projectId } = useParams();
   const navigate = useNavigate();
   const { state } = useLocation();
-  const { initialRect } = state || {};
+  const { initialRect = {} } = state || {};
   const project = projects.find((p) => p.id === projectId);
   if (!project) return <div>Project not found.</div>;
+
+  const { targetW, targetH } = useMemo(
+    () => ({ targetW: window.innerWidth, targetH: window.innerHeight }),
+    []
+  );
 
   return (
     <motion.div
       role="main"
-      className="relative w-full h-screen overflow-x-hidden no-scrollbar py-[24px] px-[12px]"
-      layoutId={`card-image-${project.id}`}
+      className="fixed inset-0 z-40 overflow-x-hidden no-scrollbar py-[24px] px-[12px] pb-[44px]"
       style={{
         backgroundImage: `url(${project.imageUrl})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
-        originX: 0.5,
-        originY: 0.5,
+        willChange: "top,left,width,height,border-radius,opacity",
       }}
       initial={{
         top: initialRect.top,
         left: initialRect.left,
         width: initialRect.width,
         height: initialRect.height,
+        borderRadius: 16,
       }}
       animate={{
         top: 0,
-        bottom: 0,
-        right: 0,
         left: 0,
-        width: "100vw",
-        height: "100vh",
+        width: targetW,
+        height: targetH,
+        borderRadius: 0,
         transition: {
           type: "tween",
           mass: 0.5,
           stiffness: 100,
           damping: 20,
-          duration: 0.8,
+          duration: 1.2,
+          ease: [0.25, 0.8, 0.25, 1],
         },
       }}
       exit={{
@@ -138,13 +142,9 @@ export const ProjectDetail = () => {
           delay: 0.5,
         },
       }}
-      transition={{
-        type: "tween",
-        mass: 0.5,
-      }}
     >
       <motion.button
-        className="relative top-6 left-6 z-50 p-2 rounded-full bg-black/50 border border-gray-200"
+        className="relative top-6 left-6 z-50 p-2 overflow-visible rounded-full"
         onClick={() => navigate("/", { state: { scrollToProjects: true } })}
         aria-label="Back to Projects"
         initial={{ y: -60, opacity: 0 }}
@@ -152,27 +152,43 @@ export const ProjectDetail = () => {
           y: -60,
           opacity: 0,
           duration: 2,
+          transition: { type: "spring", stiffness: 300, damping: 20, mass: 2 },
+        }}
+        animate={{
+          y: 0,
+          opacity: 1,
           transition: {
             type: "spring",
             stiffness: 300,
             damping: 20,
+            bounce: 1,
             mass: 2,
+            delay: 1.5,
           },
         }}
-        animate={{ y: 0, opacity: 1 }}
         transition={{
           type: "spring",
-          stiffness: 300,
-          damping: 20,
-          bounce: 1,
-          mass: 2,
-          delay: 1.1,
+        }}
+        whileHover="hover"
+        variants={{
+          hover: { backgroundColor: "rgba(0, 0, 0, 0.9)" },
         }}
       >
-        <ArrowLeft className="w-4 h-4 text-black" />
+        <motion.span
+          initial={{
+            color: "#000"
+          }}
+          variants={{
+            rest: { color: "#000000ff" },
+            hover: { color: "#fff" },
+          }}
+          transition={{ duration: 0.2 }}
+        >
+          <ArrowLeft className="w-5 h-5" />
+        </motion.span>
       </motion.button>
 
-      <motion.div className="relative z-20 pt-[120px] px-[32px] md:px-[48px] flex flex-col md:flex-row md:items-start md:justify-between h-auto w-full gap-8 text-black">
+      <motion.div className="relative z-20 pt-[100px] px-[32px] md:px-[48px] flex flex-col md:flex-row md:items-start md:justify-between h-auto w-full gap-8 text-black">
         <motion.div
           className="flex-1 flex flex-col space-y-4"
           initial={{ x: -80, opacity: 0 }}
@@ -194,7 +210,7 @@ export const ProjectDetail = () => {
             damping: 20,
             bounce: 1,
             mass: 2,
-            delay: 1.1,
+            delay: 1.5,
           }}
         >
           <div className="flex items-center">
@@ -251,7 +267,7 @@ export const ProjectDetail = () => {
             damping: 20,
             bounce: 1,
             mass: 2,
-            delay: 1.1,
+            delay: 1.5,
           }}
         >
           <div className="space-y-4">

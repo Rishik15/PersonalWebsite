@@ -14,12 +14,17 @@ export const HeroSection = () => {
         >
           <span role="presentation">
             <Typewriter
-              key={themeKey}
+              key={themeKey} 
+              onInit={(tw) => {
+                tw.changeDelay(100)
+                  .typeString("Hi, I'm Rishik Yesgari.")
+                  .callFunction(() => {
+                    tw.stop();
+                  })
+                  .start();
+              }}
               options={{
-                strings: ["Hi, I'm Rishik Yesgari."],
-                autoStart: true,
-                loop: true,
-                delay: 100,
+                loop: false,
                 cursor: "|",
               }}
             />

@@ -24,14 +24,9 @@ export const ContactMe = () => {
     <section
       id="contact"
       aria-labelledby="contact-heading"
-      className="w-full flex flex-col items-center space-y-[24px] md:space-y-[48px]"
+      className="w-full flex flex-col items-center space-y-[24px] md:space-y-[20px]"
     >
       <div className="md:px-[56px] px-[28px] w-full">
-        <h2
-          id="contact-heading"
-          className="text-left text-foreground text-[24px] md:text-[32px] font-bold transition-colors duration-200"
-        >
-        </h2>
       </div>
       <div className="flex gap-6">
         {contacts.map(({ href, icon: Icon, label }) => (

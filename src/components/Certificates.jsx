@@ -40,7 +40,7 @@ export const Certifications = () => {
       <ul
         className="
             space-y-6 md:space-y-0
-            md:px-[56px] px-[28px]
+            md:px-[74px] px-[28px]
             md:flex md:flex-wrap md:gap-x-8 md:gap-y-6
             items-start
         "
