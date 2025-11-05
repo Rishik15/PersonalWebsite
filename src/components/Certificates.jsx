@@ -5,6 +5,12 @@ import { SquareArrowOutUpRight } from "lucide-react";
 export const Certifications = () => {
   const certs = [
     {
+      title: "AWS Machine Learning Associate",
+      issuer: "AWS",
+      date: "September 2025",
+      link: "https://www.credly.com/badges/3108d177-18c6-4980-b4b0-c566b513fafc/public_url",
+    },
+    {
       title: "Machine Learning Foundations",
       issuer: "Cornell University",
       date: "July 2025",
@@ -15,13 +21,7 @@ export const Certifications = () => {
       issuer: "Microsoft",
       date: "February 2025",
       link: "https://drive.google.com/file/d/1iEWL6_G9mqxT4Hwstg3q_OhonU_qgfqN/view?usp=sharing",
-    },
-    {
-      title: "Data Science Fundamentals (NASBA)",
-      issuer: "LinkedIn Learning",
-      date: "March 2024",
-      link: "https://drive.google.com/file/d/1-2V3X1ZH85iPkjThKrbBedDpQ48WZVEw/view?usp=sharing",
-    },
+    }
   ];
 
   return (
